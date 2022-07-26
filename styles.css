@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #2b404a;
+}
+
+.snake-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100px;
+    overflow: hidden;
+    background: none;
+    border: 0;
+}
+
+.button-content {
+    color: #ccc;
+    font-size: 2em;
+    border: 1px solid #dba51a;
+    padding: 20px 35px;
+    margin: 10px;
+}
+
+.snake-button .snake-border {
+    position: absolute;
+    background: #ccc;
+    width: 2px;
+    height: 2px;
+}
+
+.snake-button .snake-border:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    animation: top-animation 2s linear infinite;
+}
+
+.snake-button .snake-border:nth-child(2) {
+    top: 0;
+    right: 0;
+    height: 100%;
+    animation: right-animation 2s linear infinite;
+    animation-delay: 1s;
+    transform: translateY(-100%);
+}
+
+.snake-button .snake-border:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    animation: bottom-animation 2s linear infinite;
+}
+
+.snake-button .snake-border:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    animation: left-animation 2s linear infinite;
+    animation-delay: 1s;
+    transform: translateY(100%);
+}
+
+.snake-border {
+    display: none;
+}
+
+.snake-button:hover {
+    cursor: pointer;
+}
+
+.snake-button:hover .snake-border {
+    display: inline;
+}
+
+@keyframes top-animation {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes right-animation {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+@keyframes bottom-animation {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes left-animation {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
